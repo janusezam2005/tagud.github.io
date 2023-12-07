@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+    
+    <style>
+         /* Style and size for font */
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+        /* Overall style for bofy */
+        body{
+            background-color:darkslateblue;
+            color: white;
+            position: relative;
+        }
+        /* Style for Header */
+        header{
+            width: 100%;
+            padding: 0 6;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            background-color: darkslateblue;
+            padding-left: 8%;
+            padding-right: 8%;
+            box-sizing: border-box;
+        }
+        /* Style for logo */
+        .logo{
+            color: white;
+            text-decoration: none;
+            font-size: 30px;
+            font-weight: 700;
+        }
+        /* Navigation styles */
+        nav ul{
+            list-style: none;
+            display: flex;
+            grid-gap: 30px;
+        }
+        nav ul li a{
+            color: white;
+            text-decoration: none;
+            transition: 0.5s;
+            font-size: 25px;
+        }
+        nav ul li a:hover{
+            color: darkviolet;    
+        }
+        /* Section styles */
+        section{
+            display: flex;
+            justify-content: space-between;
+            padding-top: 100px;
+            padding-left: 6%;
+            padding-left: 8%;
+            padding-right: 8%;
+            box-sizing: border-box;
+        }
+        /* Right sections styles */
+        .right img{
+            position: absolute;
+            top: 100px;
+            right: 130px;
+            max-width: 500px;
+            transition: 0.5s;
+        }
+        .right img:hover{
+            transform: scale(0.98);
+        }
+        /* Circle styles */
+        .circle{
+            background-color: azure;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            position: absolute;
+            right: 130px;
+            top: 200px;
+            z-index: -1;
+        }
+        /* Left section styles */
+        .left{
+            width: 450px;
+            padding-bottom: 50px;
+        }
+        .left h2{
+            font-size: 35px;
+            margin-bottom: 30px;
+            position: relative;
+            transition: 0.5s;
+        }
+        .left h2:hover{
+            transform: scale(1.1);
+        }
+        .left h2::before{
+            content: '';
+            position: absolute;
+            left 0;
+            bottom: -10px;
+            background-color: #fff;
+            width: 100%;
+            height: 2px;
+        }
+        .left h3{
+            font-size: 35px;
+            margin-bottom: 30px;
+            transition: 0.5s;
+        }
+        .left h3:hover{
+            transform: scale(1.1);
+        }
+        .left p{
+            font-size: 30px;
+            transition: 0.5s;
+        }
+        .left p:hover{
+            transform: scale(1.1);
+        }
+        /* Center section styles */
+        .center{
+            text-align: center;
+            margin-top: auto;
+            padding: 250px;
+        }
+        .center img{
+            border-radius: 30px;
+            border: 2px solid white;
+            max-width: 700px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            transition: 0.5s;
+        }
+        .center img:hover{
+            transform: scale(0.97);
+        }
+        .center h1{
+            transition: 0.5s;
+        }
+        .center h1:hover{
+            transform: scale(1.1);
+        }
+        .center h2{
+            text-align: center;
+            margin-top: 20px;
+            font-size: 50px; 
+            transition: 0.5s;
+        }
+        .center h2:hover{
+            transform: scale(1.1);
+        }
+        /* Button container styles */
+        .button-container{
+        text-align: center;
+        margin: 10px 0;
+        padding-bottom: 150px;
+        }
+        .button-container h2{
+            font-size: 50px;
+            transition: 0.5s;
+        }
+        .button-container h2:hover{
+            transform: scale(1.1);
+        }
+        /* Footer styles */
+        footer{
+            background: #343434;
+            padding-top: 50px;
+        }
+        /* Container2 styles */
+        .container2{
+            width: 1140px;
+            margin: auto;
+            display: flex;
+            justify-content:space-around;
+        }
+        /* Footer section styles */
+        .footer{
+            width: 33.3%;
+        }
+        h3{
+            font-size: 30px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        /* Footer content styles */
+        .footer-content p{
+            width: 190px;
+            margin: auto;
+            padding: 7px;
+            font-size: 30px;
+        }
+        .footer-content ul{
+            text-align: center;
+        }
+        .footer-content li{
+            font-size: 30px;
+        }
+        /* List styles */
+        .list li{
+            width: auto;
+            text-align: center;
+            list-style-type: none;
+            padding: 7px;
+            position: relative;
+            font-size: 30px;
+        }
+        .list li::before{
+            content: '';
+            position: absolute;
+            transform: translate(-50%,-50%);
+            left: 50%;
+            top: 100%;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition-duration: .5s;
+        }
+        .list li:hover::before{
+            width: 70px;
+        }
+        /* Social icons styles */
+        .social-icons{
+            text-align: center;
+            padding: 0;
+        }
+        .social-icons li{
+            display: inline-block;
+            text-align: center;
+            padding: 5px;
+        }
+        .social-icons i{
+            color: white;
+            font-size: 50px;
+        }
+        /* Hover effect for links */
+        a:hover{
+            color: white;
+        }
+        /* Bottom bar styles */
+        .bottom-bar{
+            background: darkslateblue;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 50px;
+        }
+        .bottom-bar p{
+            color: white;
+            margin: 0;
+            font-size: 16px;
+            padding: 7px;
+        }
+    </style>
+    
+    
+    
+    <head>
+        <title> My Home Page</title>
+        <script src="https://kit.fontawesome.com/958b47cc84.js" crossorigin="anonymous"></script>
+    </head>
+    
+    <body>
+        <header> 
+            <a href="#" class="logo">Janus's Home Page</a>
+            <nav>
+                <ul>
+                    <li><a href="Tagud%20Homepage.html">Home </a></li>
+                    <li><a href="Tagud%20BlogWebsite.html">Blog</a></li>
+                    <li><a href="Tagud%20Flexpage.html">Flex </a></li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+            <div class="left">
+                <h2>Hi, I am Janus Ezam Tagud</h2>
+                <h3>Introduction about my self</h3>
+                <p>Hello I am Janus Ezam Tagud a first-year college student majoring in information technology, I'm passionate about playing online games and playing sports. I enjoy spending time with my love ones and often traveling alone, and I'm always eager to learn and explore new things. I look forward to connecting with like-minded individuals and sharing experiences and knowledge.</p>
+            </div>
+            <div class="right">
+                <img src="img/JANUS.png" >
+            </div>
+            <div class="circle"></div> 
+        </section>
+            <div class="center">
+                <h2>INFOGRAPHICS</h2>
+                <h1> How do I see myself 8 years from now?</h1>
+                <img src="img/infograps.png">
+            </div>
+        
+            <div class="button-container">
+                <h2>HYPER LINKS OF SOCIAL MEDIAS</h2>
+                    <a href="https://www.facebook.com/profile.php?id=100077000121538" target="_blank">
+                    <img src="img/facebook.png" alt="Facebook" style="height: 200px;" class="circular-image">
+                    </a>
+                    <a href="https://www.instagram.com/janusminami/" target="_blank">
+                    <img src="img/insta.png" alt="Instagram" style="height: 200px;" class="circular-image">
+                    </a>
+                    <a href="https://www.tiktok.com/@janusssssssz" target="_blank">
+                    <img src="img/tiktok.png" alt="Tiktok" style="height: 200px;" class="circular-image">
+                    </a>
+                    <a href="https://github.com/janusezam" target="_blank">
+                    <img src="img/github.png" alt="Github" style="height: 200px;" class="circular-image">
+                    </a>
+            </div>
+       
+    </body>
+    <footer>
+        <div class="container2">
+            <div class="footer-content">
+                <h3>Contact Me</h3>
+                <p>Email:janusezam@gmail.com</p>
+                <p>Institutional: 2301103884@student.busku.edu.ph</p>
+                <p>Phone:63+ 96145267106</p>
+            </div>
+            <div class="footer-content">
+                <h3>Quick Links</h3>
+                <ul class="list">
+                    <li> <a href="">Home</a> </li>
+                    <li> <a href="">About</a> </li>
+                    <li> <a href="">Contact</a> </li>
+                </ul>
+            </div>
+            <div class="footer-content">
+                <h3>Follow Me</h3>
+                <li>  <a href="https://www.facebook.com/profile.php?id=100077000121538"> <i class="fab fa-facebook"></i> </a>  </li>
+                <li>  <a href="https://www.instagram.com/janusminami/"> <i class="fab fa-instagram"></i> </a>  </li>
+                <li>  <a href="https://www.tiktok.com/@janusssssssz"> <i class="fab fa-tiktok"></i> </a>  </li>
+                <li>  <a href="https://github.com/janusezam/"> <i class="fab fa-github"></i> </a>  </li>
+            </div>
+        </div>
+        <div class="bottom-bar">
+            <p>&copy;2023 Janus Ezam Tagud .All rights reserved</p>
+        </div>
+    </footer>
+</html>

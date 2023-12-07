@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+    
+    
+    <style>
+         /* Resetting default margin, padding, and font-family to create a consistent base */
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+        /* Styling the body with a dark background color, white text, and relative positioning */
+        body{
+            background-color: #161922;
+            color: white;
+            position: relative;
+        }
+         /* Styling the banner with a full-width gradient overlay and a background image */
+        .banner{
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(img/blogcover.jpg);
+            background-size: cover;
+            background-position:center
+        }
+        /* Styling the header with flex display, spacing, and background color */
+        header{
+            width: 100%;
+            padding: 0 6;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            background-color: #161922;
+            padding-left: 8%;
+            padding-right: 8%;
+            box-sizing: border-box;
+        }
+        /* Styling the logo with white color, no text decoration, and font properties */
+        .logo{
+            color: white;
+            text-decoration: none;
+            font-size: 30px;
+            font-weight: 700;
+        }
+        /* Styling the navigation list */
+        nav ul{
+            list-style: none;
+            display: flex;
+            grid-gap: 30px;
+        }
+        /* Styling the navigation links with transitions */
+        nav ul li a{
+            color: white;
+            text-decoration: none;
+            transition: 0.5s;
+            font-size: 25px;
+        }
+        /* Changing link color on hover */
+        nav ul li a:hover{
+            color: darkviolet;    
+        }
+        /* Styling the content section with flex properties and text alignment */
+        .content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-left: 8%;
+            padding-right: 8%;
+            box-sizing: border-box;
+        }
+
+        /* Styling heading within content */
+        .content h1{
+            font-size: 70px;
+            margin-top: 50px;
+            transition: 0.5s;
+        }
+        .content h1:hover{
+            transform: scale(1.1);
+        }
+        /* Styling paragraphs within content */
+        .content p{
+            margin: 20px auto; 
+            font-weight: 100ppx;
+            outline-width: 25px;
+            font-size: 30px;
+            transition: 0.5s;
+        }
+        .content p:hover{
+            transform: scale(1.1);
+        }
+         /* Styling section with space between elements and padding */
+        section{
+            display: flex;
+            justify-content: space-between;
+            padding-top: 100px;
+            padding-left: 6%;
+        }
+        /* Styling the top element with center alignment and a line below */
+        .top{
+            text-align: center;
+            margin-top: 200px;
+            font-size: 50px;
+
+        }
+        /* Additional styling for top with a position relative */
+        .top{
+            font-size: 35px;
+            margin-bottom: 30px;
+            position: relative;   
+        }
+        /* Adding a line before the top element */
+        .top::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            background-color: #fff;
+            width: 100%;
+            height: 2px; 
+        }
+        /* Styling paragraphs within the top section */
+        .top p{
+            font-size: 25px;
+        }
+        /* Styling the about section with background color and padding */
+        .about{
+            width: 100px%;
+            padding: 78px 0px;
+            background-color: #161922;
+        }
+        /* Styling the image within the about section */
+        .about img{
+            height: auto;
+            width: 500px;
+            border-radius: 30px;
+            border: 2px solid white;
+            transition: 0.5s;
+        }
+        .about img:hover{
+            transform: scale(1.1);
+        }
+        /* Styling the text container within the about section */
+        .about-text{
+            width: 550px;
+        }
+        /* Styling the main container with width, max-width, margin, and flex properties */
+        .main{
+            width: 1130px;
+            max-width: 95%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        /* Styling heading within the about-text container */
+        .about-text h1{
+            color: white;
+            font-size: 35px;
+            text-transform: capitalize;
+            margin-bottom: 20px;
+            text-align: justify;
+            transition: 0.5s;
+        }
+        .about-text h1:hover{
+            transform: scale(1.1);
+        }
+        /* Styling subheading within the about-text container */
+        .about-text h5{
+            color: white;
+            font-size: 35px;
+            text-transform: capitalize;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+            text-align: justify;
+            transition: 0.5s;
+        }
+        .about-text h5:hover{
+            transform: scale(1.1);
+        }
+        /* Styling span element with color */
+        span{
+            color: #f9004d;
+        }
+        /* Styling paragraphs within the about-text container */
+        .about-text p{
+            color: white;
+            letter-spacing: 1px;
+            line-height: 28px;
+            font-size: 30px;
+            margin-bottom: 45px;
+            text-align:justify;
+            transition: 0.5s;
+        }
+        .about-text p:hover{
+            transform: scale(1.1);
+        }
+        /* Styling buttons with background, color, border, and transition properties */
+        button{
+            background: #f9004d;
+            color: white;
+            text-decoration: none;
+            border: 2px solid transparent;
+            font-weight: bold;
+            padding: 13px 30px;
+            border-radius: 30px;
+            transition: .4s;
+        }
+        /* Changing button style on hover */
+        button:hover{
+            background: transparent;
+            border: 2px solid #f9004d;
+            cursor: pointer;
+        }
+        /* Styling the button container with text alignment, margin, padding, and background color */
+        .button-container{
+            text-align: center;
+            margin: 10px 0;
+            padding-bottom: 150px;
+            background-color: #161922;
+        }
+        /* Styling heading within the button-container */
+        .button-container h2{
+            font-size: 50px;
+            background-color: #161922;
+        }
+        /* Styling the footer with background color and padding */
+        footer{
+            background: #343434;
+            padding-top: 50px;
+        }
+        /* Styling a container within the footer with width, margin, and flex properties */
+       .container2{
+            width: 1140px;
+            margin: auto;
+            display: flex;
+            justify-content:space-around;
+        }
+        /* Styling individual footer sections with width */
+        .footer{
+            width: 33.3%;
+        }
+        /* Styling heading within footer sections */
+        h3{
+            font-size: 20px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        /* Styling paragraphs within the footer-content */
+        .footer-content p{
+            width: 190px;
+            margin: auto;
+            padding: 7px;
+            font-size: 30px;
+        }
+        /* Styling unordered lists within the footer-content with text alignment */
+        .footer-content ul{
+            text-align: center;
+        }
+        /* Styling list items within the footer-content */
+        .footer-content li{
+            font-size: 30px;
+        }
+        /* Styling list items with a line before on hover */
+        .list li{
+            width: auto;
+            text-align: center;
+            list-style-type: none;
+            padding: 7px;
+            position: relative;
+        }
+        /* Adding a line before list items on hover */
+        .list li::before{
+            content: '';
+            position: absolute;
+            transform: translate(-50%,-50%);
+            left: 50%;
+            top: 100%;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition-duration: .5s;
+        }
+        /* Changing line width before list items on hover */
+        .list li:hover::before{
+            width: 70px;
+        }
+        /* Styling the social icons with text alignment and padding */
+        .social-icons{
+            text-align: center;
+            padding: 0;
+        }
+        /* Styling individual social icons with display and padding */
+        .social-icons li{
+            display: inline-block;
+            text-align: center;
+            padding: 5px;
+        }
+        /* Styling the social icons with color and font size */
+        .social-icons i{
+            color: white;
+            font-size: 25px;
+        }
+        /* Changing link color on hover */
+        a:hover{
+            color: white;
+        }
+        /* Styling the bottom bar with background, text alignment, padding, and margin */
+        .bottom-bar{
+            background: #161922;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 50px;
+        }
+        /* Styling paragraphs within the bottom bar */
+        .bottom-bar p{
+            color: white;
+            margin: 0;
+            font-size: 16px;
+            padding: 7px;
+        }
+        
+        
+    </style>
+    
+    
+    
+    <head>
+        <title>BLOG WEBSITE</title>
+        <script src="https://kit.fontawesome.com/958b47cc84.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="banner">
+        <header> 
+            <a href="#" class="logo">Janus's Blog Page</a>
+            <nav>
+                <ul>
+                    <li><a href="Tagud%20Homepage.html">Home</a></li>
+                    <li><a href="Tagud%20BlogWebsite.html">Blog</a></li>
+                    <li><a href="Tagud%20Flexpage.html">Flex</a></li>
+                </ul>
+            </nav>
+        </header>
+            <div class="content">
+                <h1>IT111 BLOG ENTRIES PAGE</h1>
+                <p>In the insightful session led by our wonderful instructor, Glaiza Mae Libe, I've distilled the essence of the lesson into a powerful takeaway. This summary encapsulates the key learnings that not only present exciting opportunities but also pose challenges, paving the way for me to elevate my understanding and proficiency in the dynamic realm of computing. Join me as I unravel the valuable insights that promise to propel my knowledge to new heights.</p>
+            </div>
+        </div>
+        <section class="about">
+            <div class="main">
+                <img src="img/blog1.png">
+                <div class="about-text">
+                    <h1>PROFESSIONS AND CAREERS IN COMPUTING</h1>
+                    <h5>Web<span> & Internet</span></h5>
+                    <p>So in the lesson of careers in computing that was tackled by Mam Glaiza, It emphasize the innovative and irreplaceable career in the modern technology of information industry. What it really intrigued me as a learner it gives me insights and motives about what I'm going to progress and achieve skills that relates to my favorite career in the future and that is Web and internet. Which it focuses on making, improving websites in order for us to communicate and connect to the world via internet. This profession inspired me to involve creativity, designing, developing and maintaining websites or web applications. Although in the study of professions and careers in computing challenged me to enhanced my designing skills and website organizing to secure and maintain a good structure and position in my future career in the realm of web and internet.</p>
+                    <button type="button">Read More</button>
+                </div>
+            </div>
+        </section>
+        <section class="about">
+            <div class="main">
+                <img src="img/blog2.png">
+                <div class="about-text">
+                    <h1>INFORMATION PROCESSING CYCLE</h1>
+                    <h5>Data<span> Vs Information</span></h5>
+                    <p>The important lesson and challenges that I have learned in information processing cycle is that the success of information systems depends on handling data carefully from start to finish. It involves making sure that the data you put in is accurate, processing it accurately, storing and retrieving it efficiently, and creating outputs that help in decision-making. Recognizing that this cycle happens over and over, taking feedback into account, and following ethical and legal standards are all crucial for effective information processing. Which it also refers to the activities performed on raw data to transform it into meaningful information. It involves a series of operations or steps to convert, organize, analyze, and interpret data to produce useful outputs. The process typically includes stages such as input, processing, storage, and output.</p>
+                    <button type="button">Read More</button>
+                </div>
+            </div>
+        </section>
+        <section class="about">
+            <div class="main">
+                <img src="img/blog3.png">
+                <div class="about-text">
+                    <h1>INTRODUCTION TO COMPUTER SYSTEMS</h1>
+                    <h5>   4 Components in a <span> Computer Systems</span></h5>
+                    <p>This lesson covered every concept I needed to know about computers, including their complexity and role as essential components of contemporary life that spur creativity, communication, and problem-solving in a variety of contexts. A computer system is essentially made up of four key parts that cooperate to carry out tasks and process data. And the four parts of it are the physical parts (hardware), the programs and instructions (software), the human element (peopleware), and the information being processed (data ware). These elements work together to provide the basis for how computers function and communicate with users. One of my challenges is that I need to learn how to interact with computer systems securely and effectively in order for them to function at their best.</p>
+                    <button type="button">Read More</button>
+                </div>
+            </div>
+        </section>
+        <section class="about">
+            <div class="main">
+                <img src="img/blog4.png">
+                <div class="about-text">
+                    <h1>BASIC CONCEPT OF COMPUTER SECURITY</h1>
+                    <h5>Common types of <span> Cybercrimes</span></h5>
+                    <p>The most significant thing I've learned is that cybercriminals are people or organizations that use the internet to commit crimes, specifically targeting computer networks, systems, and data for malevolent intent. They may be motivated by money, stealing confidential data, upsetting the status quo, or causing harm. Cybercriminals employ a variety of strategies, including malware, phishing, hacking, and social engineering, to take advantage of weaknesses in computer systems and jeopardize their security. Additionally, countermeasures are tactics and procedures intended to thwart and lessen the effects of cyberattacks. The goal of these countermeasures is to improve people's, organizations', and systems' overall cybersecurity posture. For students to safely navigate the digital landscape, they must comprehend the threat posed by cybercriminals and the significance of putting countermeasures in place. Students can navigate the digital world safely, safeguard their personal information, and help create a safer online learning environment by being aware of these issues and taking appropriate action. To respond to changing threats, you must continue to learn about cybersecurity and be proactive.</p>
+                    <button type="button">Read More</button>
+                </div>
+            </div>
+        </section>
+        
+       <div class="button-container">
+                <h2>HYPER LINKS OF SOCIAL MEDIAS</h2>
+                    <a href="https://www.facebook.com/profile.php?id=100077000121538" target="_blank">
+                    <img src="img/facebook.png" alt="Facebook" style="height: 200px;" class="circular-image">
+                    </a>
+                    <a href="https://www.instagram.com/janusminami/" target="_blank">
+                    <img src="img/insta.png" alt="Instagram" style="height: 200px;" class="circular-image">
+                    </a>
+                    <a href="https://www.tiktok.com/@janusssssssz" target="_blank">
+                    <img src="img/tiktok.png" alt="Tiktok" style="height: 200px;" class="circular-image">
+                    </a>
+                    <a href="https://github.com/janusezam" target="_blank">
+                    <img src="img/github.png" alt="Github" style="height: 200px;" class="circular-image">
+                    </a>
+            </div>
+        
+    </body>
+    
+    <footer>
+        <div class="container2">
+            <div class="footer-content">
+                <h3>Contact Me</h3>
+                <p>Email:janusezam@gmail.com</p>
+                <p>Institutional: 2301103884@student.busku.edu.ph</p>
+                <p>Phone:63+ 96145267106</p>
+            </div>
+            <div class="footer-content">
+                <h3>Quick Links</h3>
+                <ul class="list">
+                    <li> <a href="">Home</a> </li>
+                    <li> <a href="">About</a> </li>
+                    <li> <a href="">Contact</a> </li>
+                </ul>
+            </div>
+              <div class="footer-content">
+                <h3>Follow Me</h3>
+                <li>  <a href="https://www.facebook.com/profile.php?id=100077000121538"> <i class="fab fa-facebook"></i> </a>  </li>
+                <li>  <a href="https://www.instagram.com/janusminami/"> <i class="fab fa-instagram"></i> </a>  </li>
+                <li>  <a href="https://www.tiktok.com/@janusssssssz"> <i class="fab fa-tiktok"></i> </a>  </li>
+                <li>  <a href="https://github.com/janusezam/"> <i class="fab fa-github"></i> </a>  </li>
+            </div>
+        </div>
+        
+        <div class="bottom-bar">
+            <p>&copy;2023 Janus Ezam Tagud .All rights reserved</p>
+        </div>
+             
+    </footer>
+    
+</html>
